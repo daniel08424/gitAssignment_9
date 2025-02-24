@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign Up</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="signUp()">Sign Up</button>
+        <p id="login-message"></p>
+    </div>
+
+    <script>
+        function signUp() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var message = document.getElementById("login-message");
+
+            if (username === "123" && password === "123") {
+                localStorage.setItem("loggedIn", "true");
+                window.location.href = "index.html";
+            } else {
+                message.innerHTML = "Invalid username or password.";
+            }
+        }
+    </script>
+</body>
+</html>
